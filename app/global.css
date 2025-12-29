@@ -97,6 +97,9 @@ body {
   background: var(--accent);
   color: #0f172a;
 }
+.add-section{
+    text-align: center;
+}
 
 .bubble.assistant {
   align-self: flex-start;
