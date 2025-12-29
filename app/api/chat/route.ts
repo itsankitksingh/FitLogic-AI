@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     // Format conversation history for context
-    const conversationHistory = messages.map((msg: any) => 
+    const conversationHistory = messages.map((msg: any) =>
       `${msg.role === 'user' ? 'Human' : 'Assistant'}: ${msg.content}`
     ).join('\n\n');
 
@@ -40,7 +40,7 @@ ${conversationHistory}
 `;
 
     // Use Gemini for generation
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
